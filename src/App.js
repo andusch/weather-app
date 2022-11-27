@@ -9,7 +9,7 @@ function App() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=9ad4acade5e9b237eeb3e19573a5120b`
 
   const searchLocation = (event) => {
-    if (event.key == 'Enter'){
+    if (event.key === 'Enter'){
       axios.get(url).then((response) => {
         setData(response.data)
         console.log(response.data)
@@ -42,7 +42,7 @@ function App() {
           </div>
         </div>
 
-{data.name != undefined && 
+{data.name !== undefined && 
   <div className="bottom">
           <div className="feels">
             {data.main ? <p className="bold">{data.main.feels_like.toFixed()}°C</p> : null}
